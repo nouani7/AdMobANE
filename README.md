@@ -50,3 +50,29 @@ initAdMob
     const INTERSTITIAL_ID: String = "ca-app-pub-3940256099942544/1033173712";
     const REWARDED_ID: String = "ca-app-pub-3940256099942544/5224354917";
     const APP_OPEN_ID: String = "ca-app-pub-3940256099942544/9257395921";
+
+***Edit your app XML description file as follows - change the Google Test App ID to your app ID.***
+
+    <manifestAdditions><![CDATA[
+        <manifest android:installLocation="auto">
+
+			<uses-sdk android:minSdkVersion="23" android:targetSdkVersion="34" />
+
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+            <application>
+					
+                <meta-data
+                    android:name="com.google.android.gms.ads.APPLICATION_ID"
+                    android:value="ca-app-pub-3940256099942544~3347511713"/>
+
+                <activity
+                    android:name="com.google.android.gms.ads.AdActivity"
+                    android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+                    android:exported="false"
+                    android:theme="@android:style/Theme.Translucent"/>
+            </application>
+        </manifest>
+    ]]></manifestAdditions>
+    
