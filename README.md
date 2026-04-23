@@ -170,7 +170,8 @@
         
    	} else {
         
-        		adMob.loadRewarded(REWARDED_ID);
+    adMob.loadRewarded(REWARDED_ID);
+	
    	}
  >
           	
@@ -180,8 +181,6 @@
     	
     }
 	
-
-
 
 ## **AdMob Events**
 
