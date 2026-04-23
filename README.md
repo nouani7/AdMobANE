@@ -283,3 +283,13 @@
 > Thanks to me for my patience.
 > 
 > **Thank God (الله) for everything.**
+
+
+***Screenshots of ads in test mode***
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/85a64a4a-4e54-4356-b9b6-09963faf335e" width="32%" />
+  <img src="https://github.com/user-attachments/assets/50776293-5ddd-4934-bf93-74df238cc7eb" width="32%" />
+  <img src="https://github.com/user-attachments/assets/ddfadec1-44c2-4f26-867b-af23bddbc6cc" width="32%" />
+</p>
+
