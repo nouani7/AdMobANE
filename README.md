@@ -9,17 +9,22 @@
  - [x] AppOpen
  - [x] Banner
  - [x] Interstitial
+ - [x] Rewarded Interstitial
  - [x] Rewarded Video
 
 **AdMob Events**
 
 **Preparation**
-initAdMob
+ - initAdMob
 
 **App Open**  
- - loadAppOpen
- - showAppOpen
- - isAppOpenLoaded
+ - APP_OPEN_LOADED 			adMob.addEventListener(AdMobANE.APP_OPEN_LOADED, _onAppOpenLoaded);
+ - APP_OPEN_LOAD_FAILED 		adMob.addEventListener(AdMobANE.APP_OPEN_LOAD_FAILED, _onAppOpenFailed);
+ - APP_OPEN_SHOWED 			adMob.addEventListener(AdMobANE.APP_OPEN_SHOWED, _onAppOpenShowed);
+ - APP_OPEN_SHOW_FAILED 		adMob.addEventListener(AdMobANE.APP_OPEN_SHOW_FAILED, _onAppOpenShowFailed);
+ - APP_OPEN_CLOSED 			adMob.addEventListener(AdMobANE.APP_OPEN_CLOSED, _onAppOpenClosed);
+ - APP_OPEN_IMPRESSION 		adMob.addEventListener(AdMobANE.APP_OPEN_IMPRESSION, _onAppOpenImpression);
+ - APP_OPEN_DESTROYED	 	adMob.addEventListener(AdMobANE.APP_OPEN_DESTROYED, _onAppOpenDestroyed);	
 
 **Banner**
  - showBanner
@@ -75,4 +80,10 @@ initAdMob
             </application>
         </manifest>
     ]]></manifestAdditions>
-    
+
+
+Thank lilili87222 for the idea.
+Thank nboy1 for the hope.
+Thank chatgpt / cloud ai for making things easier.
+Thank to me for my patience.
+Thank God (الله) for everything.
