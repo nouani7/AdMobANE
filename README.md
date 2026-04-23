@@ -21,7 +21,12 @@
     const REWARDED_ID: String = "ca-app-pub-3940256099942544/5224354917"; // Test Rewarded
     const REWARDED_INTERSTITIAL_ID: String = "ca-app-pub-3940256099942544/5354046379"; // Test Rewarded Interstitial
     const APP_OPEN_ID: String = "ca-app-pub-3940256099942544/9257395921"; // Test App Open
-    
+
+## **Importing library classes**
+
+import com.admob.mx.AdMobANE;
+import com.admob.mx.AdMobEvent;
+
 
 ## **Preparation**
 
