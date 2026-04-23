@@ -270,9 +270,12 @@
 
 ***Made with much passion and patience to use it for free***
 
->Thanks lilili87222 for the idea.
->Thanks nboy1 for the hope.
+> Thanks lilili87222 for the idea.
+> 
+> Thanks nboy1 for the hope.
+> 
 > Thanks chatgpt / cloud ai for making things easier.
+> 
 > Thanks to me for my patience.
 > 
 > **Thank God (الله) for everything.**
