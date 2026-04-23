@@ -209,7 +209,7 @@
 
 	if (adMob.isAppOpenLoaded()) {
 
-		adMob.showAppOpen(); // App Open يُعرض عادةً فور تحميله
+		adMob.showAppOpen(); // App Open
 
 	} else {
 
