@@ -67,7 +67,27 @@
 **Initialize First, it is necessary**
 >
     adMob.initAdMob(APP_ID);
->
+
+
+**Init Handlers**
+
+    adMob.addEventListener(AdMobANE.ADMOB_INITIALIZED, _onInitialized);
+    adMob.addEventListener(AdMobANE.ADMOB_INIT_FAILED, _onInitFailed);
+    
+    adMob.initAdMob(APP_ID);
+    
+    function _onInitialized(e: AdMobEvent): void {
+    
+    	trace("[AdMob] ✅ Initialization successful — starting to load ads");
+    
+    	// All your ad examples can be placed here to ensure they work successfully.
+    
+    }
+    
+    function _onInitFailed(e: AdMobEvent): void {
+    	trace("[AdMob] ❌ Initialization failed — error code: " + e.errorCode);
+    }
+
 **load the ads to view**
 >
     adMob.loadAppOpen(APP_OPEN_ID);
