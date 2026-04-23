@@ -3,7 +3,7 @@
 
 > This extension is built with the latest version of the Google Ads  Library - 2026  (25.2.0)
 
-** AdMob Ads Types  supports**
+**AdMob Ads Types Supports**
 
  - [x] AppOpen
  - [x] Banner
@@ -11,13 +11,70 @@
  - [x] Rewarded Interstitial
  - [x] Rewarded Video
 
-**AdMob Events**
+## ****integrate AdMob ANE into your application****
 
-**Preparation**
- - initAdMob
+***Begin by defining the following  - variables Google's experimental IDs (for testing only)***
+
+    const APP_ID: String = "ca-app-pub-3940256099942544~3347511713"; // Test App ID
+    const BANNER_ID: String = "ca-app-pub-3940256099942544/6300978111"; // Test Banner
+    const INTERSTITIAL_ID: String = "ca-app-pub-3940256099942544/1033173712"; // Test Interstitial
+    const REWARDED_ID: String = "ca-app-pub-3940256099942544/5224354917"; // Test Rewarded
+    const REWARDED_INTERSTITIAL_ID: String = "ca-app-pub-3940256099942544/5354046379"; // Test Rewarded Interstitial
+    const APP_OPEN_ID: String = "ca-app-pub-3940256099942544/9257395921"; // Test App Open
+    
+
+## **Preparation**
+
+    var adMob: AdMobANE; // The single reference to the ANE (Singleton)
+
+## **AdMob Settings**
+
+**Content Rating**
+>
+    adMob.setMaxContentRating(AdMobANE.RATING_PG); // parental guidance suggested
+    
+**Child Protection**
+>
+    adMob.setChildDirected(false); // COPPA — not for children
+ >
+    adMob.setUnderAgeOfConsent(false); // GDPR — above age of consent
+
+**Audio**
+>
+    adMob.setVolume(0.8); // 80% volume
+>
+    adMob.setMuted(false); // not muted
+
+**Test Device**
+>
+    adMob.addTestDevice("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"); // ← replace with your device ID
+
+>Get deviceId from logcat by searching for "Use RequestConfiguration"
+
+
+**Initialize First, it is necessary**
+>
+    adMob.initAdMob(APP_ID);
+>
+**load the ads to view**
+>
+    adMob.loadAppOpen(APP_OPEN_ID);
+	adMob.loadInterstitial(INTERSTITIAL_ID);
+	adMob.loadRewardedInterstitial(REWARDED_INTERSTITIAL_ID);
+	adMob.loadRewarded(REWARDED_ID);
+
+
+## **AdMob Events**
+
+**Initialize**
+>
+    adMob.addEventListener(AdMobANE.ADMOB_INITIALIZED, _onInitialized);
+>
+    adMob.addEventListener(AdMobANE.ADMOB_INIT_FAILED, _onInitFailed);
 
 **App Open**  
 
+>
     APP_OPEN_LOADED 	     adMob.addEventListener(AdMobANE.APP_OPEN_LOADED, _onAppOpenLoaded);
 >
     APP_OPEN_LOAD_FAILED     adMob.addEventListener(AdMobANE.APP_OPEN_LOAD_FAILED, _onAppOpenFailed);
@@ -33,36 +90,93 @@
     APP_OPEN_DESTROYED       adMob.addEventListener(AdMobANE.APP_OPEN_DESTROYED, _onAppOpenDestroyed);	
 
 **Banner**
- - showBanner
- - hideBanner
- - removeBanner
+>
+    adMob.addEventListener(AdMobANE.BANNER_LOADED, _onBannerLoaded);
+>
+    adMob.addEventListener(AdMobANE.BANNER_LOAD_FAILED, _onBannerFailed);
+>
+    adMob.addEventListener(AdMobANE.BANNER_OPENED, _onBannerOpened);
+>
+    adMob.addEventListener(AdMobANE.BANNER_CLOSED, _onBannerClosed);
+>
+    adMob.addEventListener(AdMobANE.BANNER_IMPRESSION, _onBannerImpression);
+>
+    adMob.addEventListener(AdMobANE.BANNER_CLICKED, _onBannerClicked);
+>
+    adMob.addEventListener(AdMobANE.BANNER_REFRESHED, _onBannerRefreshed);
+>
+    adMob.addEventListener(AdMobANE.BANNER_REFRESH_FAILED, _onBannerRefreshFailed);
+>
+    adMob.addEventListener(AdMobANE.BANNER_POSITION_CHANGED, _onBannerPositionChanged);
+>
+    adMob.addEventListener(AdMobANE.BANNER_POSITION_FAILED, _onBannerPositionFailed);
+>
+    adMob.addEventListener(AdMobANE.BANNER_HIDDEN, _onBannerHidden);
+>
+    adMob.addEventListener(AdMobANE.BANNER_REMOVED, _onBannerRemoved);
   
 **Interstitial**  
- - loadInterstitial
- - showInterstitial
- - isInterstitialLoaded
+>
+    adMob.addEventListener(AdMobANE.INTERSTITIAL_LOADED, _onInterstitialLoaded);
+ >
+    adMob.addEventListener(AdMobANE.INTERSTITIAL_LOAD_FAILED, _onInterstitialFailed);
+>
+    adMob.addEventListener(AdMobANE.INTERSTITIAL_SHOWED, _onInterstitialShowed);
+ >
+    adMob.addEventListener(AdMobANE.INTERSTITIAL_SHOW_FAILED, _onInterstitialShowFailed);
+>
+    adMob.addEventListener(AdMobANE.INTERSTITIAL_CLOSED, _onInterstitialClosed);
+>
+    adMob.addEventListener(AdMobANE.INTERSTITIAL_IMPRESSION, _onInterstitialImpression);
+>
+    adMob.addEventListener(AdMobANE.INTERSTITIAL_DESTROYED, _onInterstitialDestroyed);
+
+**Rewarded Interstitial**
+>
+    adMob.addEventListener(AdMobANE.REWARDED_INTERSTITIAL_LOADED, _onRILoaded);
+>
+    adMob.addEventListener(AdMobANE.REWARDED_INTERSTITIAL_LOAD_FAILED, _onRIFailed);
+>
+    adMob.addEventListener(AdMobANE.REWARDED_INTERSTITIAL_SHOWED, _onRIShowed);
+>
+    adMob.addEventListener(AdMobANE.REWARDED_INTERSTITIAL_SHOW_FAILED, _onRIShowFailed);
+>
+    adMob.addEventListener(AdMobANE.REWARDED_INTERSTITIAL_CLOSED, _onRIClosed);
+>
+    adMob.addEventListener(AdMobANE.REWARDED_INTERSTITIAL_IMPRESSION, _onRIImpression);
+>
+    adMob.addEventListener(AdMobANE.REWARDED_INTERSTITIAL_REWARD, _onRIReward);
+>
+    adMob.addEventListener(AdMobANE.REWARDED_INTERSTITIAL_DESTROYED, _onRIDestroyed);
 
 **Rewarded**  
- - loadRewarded
- - showRewarded
- - sRewardedLoaded
+>
+    adMob.addEventListener(AdMobANE.REWARDED_LOADED, _onRewardedLoaded);
+>
+    adMob.addEventListener(AdMobANE.REWARDED_LOAD_FAILED, _onRewardedFailed);
+>
+    adMob.addEventListener(AdMobANE.REWARDED_SHOWED, _onRewardedShowed);
+>
+    adMob.addEventListener(AdMobANE.REWARDED_SHOW_FAILED, _onRewardedShowFailed);
+>
+    adMob.addEventListener(AdMobANE.REWARDED_CLOSED, _onRewardedClosed);
+>
+    adMob.addEventListener(AdMobANE.REWARDED_IMPRESSION, _onRewardedImpression);
+>
+    adMob.addEventListener(AdMobANE.REWARDED_REWARD, _onRewardedReward);
+>
+    adMob.addEventListener(AdMobANE.REWARDED_DESTROYED, _onRewardedDestroyed);
+	
+**UMP Consent**
+>
+    adMob.addEventListener(AdMobANE.CONSENT_INFO_UPDATED, _onConsentInfoUpdated);
+>
+    adMob.addEventListener(AdMobANE.CONSENT_INFO_FAILED, _onConsentInfoFailed);
+>
+    adMob.addEventListener(AdMobANE.CONSENT_FORM_DISMISSED, _onConsentFormDismissed);
+>
+    adMob.addEventListener(AdMobANE.CONSENT_FORM_FAILED, _onConsentFormFailed);
 
-**AdMob Settings**
- - setVolume
- - setMuted
- - setChildDirected
- - addTestDevice
-
-## ****integrate AdMob ANE into your application****
-
-***Begin by defining the following  - variables Google's experimental IDs (for testing only)***
-
-const APP_ID: String = "ca-app-pub-3940256099942544~3347511713"; // Test App ID
-const BANNER_ID: String = "ca-app-pub-3940256099942544/6300978111"; // Test Banner
-const INTERSTITIAL_ID: String = "ca-app-pub-3940256099942544/1033173712"; // Test Interstitial
-const REWARDED_ID: String = "ca-app-pub-3940256099942544/5224354917"; // Test Rewarded
-const REWARDED_INTERSTITIAL_ID: String = "ca-app-pub-3940256099942544/5354046379"; // Test Rewarded Interstitial
-const APP_OPEN_ID: String = "ca-app-pub-3940256099942544/9257395921"; // Test App Open
 
 ***Edit your app XML description file as follows - change the Google Test App ID to your app ID.***
 
@@ -88,6 +202,71 @@ const APP_OPEN_ID: String = "ca-app-pub-3940256099942544/9257395921"; // Test Ap
             </application>
         </manifest>
     ]]></manifestAdditions>
+
+
+
+***A simple example of AppOpen AD***
+
+	if (adMob.isAppOpenLoaded()) {
+
+		adMob.showAppOpen(); // App Open يُعرض عادةً فور تحميله
+
+	} else {
+
+		adMob.loadAppOpen(APP_OPEN_ID);
+
+	}
+	
+***A simple example of Interstitial AD***
+
+	if (adMob.isInterstitialLoaded()) {
+
+		adMob.showInterstitial();
+
+	} else {
+
+		adMob.loadInterstitial(INTERSTITIAL_ID);
+	}
+
+***A simple example of Rewarded Interstitial AD***
+
+		if (adMob.isRewardedInterstitialLoaded()) {
+
+		adMob.showRewardedInterstitial();
+
+	} else {
+
+		adMob.loadRewardedInterstitial(REWARDED_INTERSTITIAL_ID);
+	}
+	
+***A simple example of Rewarded AD***
+
+    adMob.addEventListener(AdMobANE.REWARDED_REWARD, _onRewardedReward);
+>
+   
+        	
+        	if (adMob.isRewardedLoaded()) {
+        
+        		adMob.showRewarded();
+        
+        	} else {
+        
+        		adMob.loadRewarded(REWARDED_ID);
+        	}
+ >
+          	
+    function _onRewardedReward(e: AdMobEvent): void {
+    
+    	trace("[Rewarded] 🎁: " + e.rewardAmount + " " + e.rewardType);
+    	
+    }
+	
+
+ 1. AdMobANE.ane Attached is a file ready for embedding in your app.
+ 
+ 2. Also included is an example application with all the necessary cases to you
+ 
+ 3.  And there is a step-by-step guide on how to create your own.
 
 ***Made with much passion and patience to use it for free***
 
