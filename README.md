@@ -57,10 +57,12 @@
 
 ***Begin by defining the following  - variables Google's experimental IDs (for testing only)***
 
-    const BANNER_ID: String = "ca-app-pub-3940256099942544/6300978111";
-    const INTERSTITIAL_ID: String = "ca-app-pub-3940256099942544/1033173712";
-    const REWARDED_ID: String = "ca-app-pub-3940256099942544/5224354917";
-    const APP_OPEN_ID: String = "ca-app-pub-3940256099942544/9257395921";
+const APP_ID: String = "ca-app-pub-3940256099942544~3347511713"; // Test App ID
+const BANNER_ID: String = "ca-app-pub-3940256099942544/6300978111"; // Test Banner
+const INTERSTITIAL_ID: String = "ca-app-pub-3940256099942544/1033173712"; // Test Interstitial
+const REWARDED_ID: String = "ca-app-pub-3940256099942544/5224354917"; // Test Rewarded
+const REWARDED_INTERSTITIAL_ID: String = "ca-app-pub-3940256099942544/5354046379"; // Test Rewarded Interstitial
+const APP_OPEN_ID: String = "ca-app-pub-3940256099942544/9257395921"; // Test App Open
 
 ***Edit your app XML description file as follows - change the Google Test App ID to your app ID.***
 
