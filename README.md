@@ -16,12 +16,12 @@
 
 ***Begin by defining the following  - variables Google's experimental IDs (for testing only)***
 
-    const APP_ID: String = "ca-app-pub-3940256099942544~3347511713"; // Test App ID
-    const BANNER_ID: String = "ca-app-pub-3940256099942544/6300978111"; // Test Banner
-    const INTERSTITIAL_ID: String = "ca-app-pub-3940256099942544/1033173712"; // Test Interstitial
-    const REWARDED_ID: String = "ca-app-pub-3940256099942544/5224354917"; // Test Rewarded
+    const APP_ID: String          		   = "ca-app-pub-3940256099942544~3347511713"; // Test App ID
+    const BANNER_ID: String       		   = "ca-app-pub-3940256099942544/6300978111"; // Test Banner
+    const INTERSTITIAL_ID: String 		   = "ca-app-pub-3940256099942544/1033173712"; // Test Interstitial
+    const REWARDED_ID: String   		   = "ca-app-pub-3940256099942544/5224354917"; // Test Rewarded
     const REWARDED_INTERSTITIAL_ID: String = "ca-app-pub-3940256099942544/5354046379"; // Test Rewarded Interstitial
-    const APP_OPEN_ID: String = "ca-app-pub-3940256099942544/9257395921"; // Test App Open
+    const APP_OPEN_ID: String              = "ca-app-pub-3940256099942544/9257395921"; // Test App Open
 
 ## **Importing library classes**
 
@@ -102,6 +102,66 @@
     SIZE_FULL        // 468×60 — Full size. 
     SIZE_LEADERBOARD // 728×90 — Leaderboard (for tablets). 
     SIZE_ADAPTIVE    // Adaptive — height is calculated automatically (GMA v25+). 
+
+
+***A simple example of AppOpen AD***
+
+	if (adMob.isAppOpenLoaded()) {
+
+		adMob.showAppOpen(); // App Open
+
+	} else {
+
+		adMob.loadAppOpen(APP_OPEN_ID);
+
+	}
+	
+***A simple example of Interstitial AD***
+
+	if (adMob.isInterstitialLoaded()) {
+
+		adMob.showInterstitial();
+
+	} else {
+
+		adMob.loadInterstitial(INTERSTITIAL_ID);
+	}
+
+***A simple example of Rewarded Interstitial AD***
+
+	if (adMob.isRewardedInterstitialLoaded()) {
+
+		adMob.showRewardedInterstitial();
+
+	} else {
+
+		adMob.loadRewardedInterstitial(REWARDED_INTERSTITIAL_ID);
+	}
+	
+***A simple example of Rewarded AD***
+
+    adMob.addEventListener(AdMobANE.REWARDED_REWARD, _onRewardedReward);
+>
+   
+        	
+   	if (adMob.isRewardedLoaded()) {
+        
+    	adMob.showRewarded();
+        
+   	} else {
+        
+        		adMob.loadRewarded(REWARDED_ID);
+   	}
+ >
+          	
+    function _onRewardedReward(e: AdMobEvent): void {
+    
+    	trace("[Rewarded] 🎁: " + e.rewardAmount + " " + e.rewardType);
+    	
+    }
+	
+
+
 
 ## **AdMob Events**
 
@@ -241,64 +301,6 @@
         </manifest>
     ]]></manifestAdditions>
 
-
-
-***A simple example of AppOpen AD***
-
-	if (adMob.isAppOpenLoaded()) {
-
-		adMob.showAppOpen(); // App Open
-
-	} else {
-
-		adMob.loadAppOpen(APP_OPEN_ID);
-
-	}
-	
-***A simple example of Interstitial AD***
-
-	if (adMob.isInterstitialLoaded()) {
-
-		adMob.showInterstitial();
-
-	} else {
-
-		adMob.loadInterstitial(INTERSTITIAL_ID);
-	}
-
-***A simple example of Rewarded Interstitial AD***
-
-		if (adMob.isRewardedInterstitialLoaded()) {
-
-		adMob.showRewardedInterstitial();
-
-	} else {
-
-		adMob.loadRewardedInterstitial(REWARDED_INTERSTITIAL_ID);
-	}
-	
-***A simple example of Rewarded AD***
-
-    adMob.addEventListener(AdMobANE.REWARDED_REWARD, _onRewardedReward);
->
-   
-        	
-        	if (adMob.isRewardedLoaded()) {
-        
-        		adMob.showRewarded();
-        
-        	} else {
-        
-        		adMob.loadRewarded(REWARDED_ID);
-        	}
- >
-          	
-    function _onRewardedReward(e: AdMobEvent): void {
-    
-    	trace("[Rewarded] 🎁: " + e.rewardAmount + " " + e.rewardType);
-    	
-    }
-	
 
  1. AdMobANE.ane Attached is a file ready for embedding in your app.
  
