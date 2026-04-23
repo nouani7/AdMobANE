@@ -37,7 +37,14 @@
 **Content Rating**
 >
     adMob.setMaxContentRating(AdMobANE.RATING_PG); // parental guidance suggested
-    
+
+ Content Rating Constants
+>
+    RATING_G   // For all audiences.
+    RATING_PG  // Parental guidance suggested.
+    RATING_T   // For teens.
+    RATING_MA  // For mature audiences.
+
 **Child Protection**
 >
     adMob.setChildDirected(false); // COPPA — not for children
@@ -77,6 +84,24 @@
         AdMobANE.SIZE_ADAPTIVE // Adaptive size (Recommended for GMA v25+)
     );
 
+***Banner Position***
+>
+    BANNER_TOP          // Banner position: Top of the screen (center). 
+    BANNER_TOP_LEFT     // Banner position: Top left. 
+    BANNER_TOP_RIGHT    // Banner position: Top right. 
+    BANNER_BOTTOM       // Banner position: Bottom of the screen (center, default).
+    BANNER_BOTTOM_LEFT  // Banner position: Bottom left.
+    BANNER_BOTTOM_RIGHT // Banner position: Bottom right.
+    BANNER_CENTER       // Banner position: Center of the screen. 
+    
+***Banner Sizes***
+>
+    SIZE_BANNER      // 320×50 — Standard. 
+    SIZE_LARGE       // 320×100 — Large. 
+    SIZE_MEDIUM      // 300×250 — Medium Rectangle (MREC).
+    SIZE_FULL        // 468×60 — Full size. 
+    SIZE_LEADERBOARD // 728×90 — Leaderboard (for tablets). 
+    SIZE_ADAPTIVE    // Adaptive — height is calculated automatically (GMA v25+). 
 
 ## **AdMob Events**
 
