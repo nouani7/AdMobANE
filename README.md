@@ -67,6 +67,14 @@
 	adMob.loadRewardedInterstitial(REWARDED_INTERSTITIAL_ID);
 	adMob.loadRewarded(REWARDED_ID);
 
+**Banner show instantly and does not require loading.**
+>
+adMob.showBanner(
+    BANNER_ID, // Banner ID
+    AdMobANE.BANNER_BOTTOM, // Position 
+    AdMobANE.SIZE_ADAPTIVE // Adaptive size (Recommended for GMA v25+)
+);
+
 
 ## **AdMob Events**
 
@@ -77,21 +85,20 @@
     adMob.addEventListener(AdMobANE.ADMOB_INIT_FAILED, _onInitFailed);
 
 **App Open**  
-
 >
-    APP_OPEN_LOADED 	     adMob.addEventListener(AdMobANE.APP_OPEN_LOADED, _onAppOpenLoaded);
+    adMob.addEventListener(AdMobANE.APP_OPEN_LOADED, _onAppOpenLoaded);
 >
-    APP_OPEN_LOAD_FAILED     adMob.addEventListener(AdMobANE.APP_OPEN_LOAD_FAILED, _onAppOpenFailed);
+    adMob.addEventListener(AdMobANE.APP_OPEN_LOAD_FAILED, _onAppOpenFailed);
  >
-    APP_OPEN_SHOWED 	     adMob.addEventListener(AdMobANE.APP_OPEN_SHOWED, _onAppOpenShowed);
+    adMob.addEventListener(AdMobANE.APP_OPEN_SHOWED, _onAppOpenShowed);
 >
-    APP_OPEN_SHOW_FAILED     adMob.addEventListener(AdMobANE.APP_OPEN_SHOW_FAILED, _onAppOpenShowFailed);
+    adMob.addEventListener(AdMobANE.APP_OPEN_SHOW_FAILED, _onAppOpenShowFailed);
 >
-    APP_OPEN_CLOSED          adMob.addEventListener(AdMobANE.APP_OPEN_CLOSED, _onAppOpenClosed);
+    adMob.addEventListener(AdMobANE.APP_OPEN_CLOSED, _onAppOpenClosed);
 >
-    APP_OPEN_IMPRESSION      adMob.addEventListener(AdMobANE.APP_OPEN_IMPRESSION, _onAppOpenImpression);
+    adMob.addEventListener(AdMobANE.APP_OPEN_IMPRESSION, _onAppOpenImpression);
 >
-    APP_OPEN_DESTROYED       adMob.addEventListener(AdMobANE.APP_OPEN_DESTROYED, _onAppOpenDestroyed);	
+    dMob.addEventListener(AdMobANE.APP_OPEN_DESTROYED, _onAppOpenDestroyed);	
 
 **Banner**
 >
