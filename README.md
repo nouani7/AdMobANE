@@ -24,10 +24,9 @@
 
 ## **Importing library classes**
 
-import com.admob.mx.AdMobANE;
-import com.admob.mx.AdMobEvent;
-
-
+    import com.admob.mx.AdMobANE;
+    import com.admob.mx.AdMobEvent;
+	
 ## **Preparation**
 
     var adMob: AdMobANE; // The single reference to the ANE (Singleton)
