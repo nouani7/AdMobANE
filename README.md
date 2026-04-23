@@ -1,8 +1,7 @@
 # AdMobANE
 **AdMob ANE - Support Google AdMob Ads in Air Android apps**
 
-> This extension is built with the latest version of the Google Ads
-> Library - 2026  (25.2.0)
+> This extension is built with the latest version of the Google Ads  Library - 2026  (25.2.0)
 
 ** AdMob Ads Types  supports**
 
@@ -18,13 +17,20 @@
  - initAdMob
 
 **App Open**  
- - APP_OPEN_LOADED 			adMob.addEventListener(AdMobANE.APP_OPEN_LOADED, _onAppOpenLoaded);
- - APP_OPEN_LOAD_FAILED 		adMob.addEventListener(AdMobANE.APP_OPEN_LOAD_FAILED, _onAppOpenFailed);
- - APP_OPEN_SHOWED 			adMob.addEventListener(AdMobANE.APP_OPEN_SHOWED, _onAppOpenShowed);
- - APP_OPEN_SHOW_FAILED 		adMob.addEventListener(AdMobANE.APP_OPEN_SHOW_FAILED, _onAppOpenShowFailed);
- - APP_OPEN_CLOSED 			adMob.addEventListener(AdMobANE.APP_OPEN_CLOSED, _onAppOpenClosed);
- - APP_OPEN_IMPRESSION 		adMob.addEventListener(AdMobANE.APP_OPEN_IMPRESSION, _onAppOpenImpression);
- - APP_OPEN_DESTROYED	 	adMob.addEventListener(AdMobANE.APP_OPEN_DESTROYED, _onAppOpenDestroyed);	
+
+    APP_OPEN_LOADED 	     adMob.addEventListener(AdMobANE.APP_OPEN_LOADED, _onAppOpenLoaded);
+>
+    APP_OPEN_LOAD_FAILED     adMob.addEventListener(AdMobANE.APP_OPEN_LOAD_FAILED, _onAppOpenFailed);
+ >
+    APP_OPEN_SHOWED 	     adMob.addEventListener(AdMobANE.APP_OPEN_SHOWED, _onAppOpenShowed);
+>
+    APP_OPEN_SHOW_FAILED     adMob.addEventListener(AdMobANE.APP_OPEN_SHOW_FAILED, _onAppOpenShowFailed);
+>
+    APP_OPEN_CLOSED          adMob.addEventListener(AdMobANE.APP_OPEN_CLOSED, _onAppOpenClosed);
+>
+    APP_OPEN_IMPRESSION      adMob.addEventListener(AdMobANE.APP_OPEN_IMPRESSION, _onAppOpenImpression);
+>
+    APP_OPEN_DESTROYED       adMob.addEventListener(AdMobANE.APP_OPEN_DESTROYED, _onAppOpenDestroyed);	
 
 **Banner**
  - showBanner
@@ -81,9 +87,11 @@
         </manifest>
     ]]></manifestAdditions>
 
+***Made with much passion and patience to use it for free***
 
-Thank lilili87222 for the idea.
-Thank nboy1 for the hope.
-Thank chatgpt / cloud ai for making things easier.
-Thank to me for my patience.
-Thank God (الله) for everything.
+>Thanks lilili87222 for the idea.
+>Thanks nboy1 for the hope.
+> Thanks chatgpt / cloud ai for making things easier.
+> Thanks to me for my patience.
+> 
+> **Thank God (الله) for everything.**
