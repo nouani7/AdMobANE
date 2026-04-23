@@ -1,3 +1,4 @@
+
 # AdMobANE
 **AdMob ANE - Support Google AdMob Ads in Air Android apps**
 
@@ -69,11 +70,12 @@
 
 **Banner show instantly and does not require loading.**
 >
-adMob.showBanner(
-    BANNER_ID, // Banner ID
-    AdMobANE.BANNER_BOTTOM, // Position 
-    AdMobANE.SIZE_ADAPTIVE // Adaptive size (Recommended for GMA v25+)
-);
+
+    adMob.showBanner(
+        BANNER_ID, // Banner ID
+        AdMobANE.BANNER_BOTTOM, // Position 
+        AdMobANE.SIZE_ADAPTIVE // Adaptive size (Recommended for GMA v25+)
+    );
 
 
 ## **AdMob Events**
